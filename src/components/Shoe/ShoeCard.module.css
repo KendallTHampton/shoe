@@ -1,0 +1,71 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    max-width: 300px;
+    background: white;
+    border-radius: 2rem;
+
+    padding: 1rem 1rem;
+    box-shadow: 1px 1px 10px rgb(163, 163, 163);
+
+}
+
+.shoe__img {
+    height: 230px;
+    width: 300px;
+    object-fit: fill;
+    aspect-ratio: 100%;
+    border-radius: 1.5rem;
+}
+
+.shoe__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+
+.shoe__name {
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.shoe__desc {
+    color: rgb(94, 94, 94);
+    margin-top: .5rem;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.shoe__actions {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    gap: 2rem;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+
+
+.shoe__price {
+    margin: 0;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(109, 109, 109);
+}
+
+.shoe__purchase {
+    border-radius: .5rem;
+    border: none;
+    height: auto;
+    background: #181815;
+    font-weight: 600;
+    color: #FFF6E0;
+    padding: .75rem;
+    font-size: 1rem;
+    cursor: pointer;
+}

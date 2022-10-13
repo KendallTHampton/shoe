@@ -1,0 +1,12 @@
+.shoe__section h1 {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+
+.shoe__contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
