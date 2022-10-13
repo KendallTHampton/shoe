@@ -40,7 +40,7 @@ function Cart(props)
 
                 <div className={classes.cart__total}>
                     <h2>Total Amount</h2>
-                    <div className={classes.underLine}></div>
+
                     <h5 className={classes.cart__amount}>${totalAmount}</h5>
                 </div>
 

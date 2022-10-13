@@ -124,7 +124,7 @@
         bottom: 0;
         top: -30rem;
         left: 0;
-        transition: 1s;
+
     }
 
     .nav__list.nav__active {

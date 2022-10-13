@@ -31,7 +31,6 @@ function App()
         />
       }
       <Navbar
-
         onShowCart={showCartHandler}
       />
       <Home />

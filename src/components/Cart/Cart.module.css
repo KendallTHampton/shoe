@@ -1,31 +1,44 @@
 .modal {
-    height: 325px;
+    height: 400px;
+
 }
 
 .cart__container {
     display: flex;
     gap: 1rem;
-    justify-content: space-evenly;
+    flex-direction: column;
+
 }
 
 .cart__container h2 {
     margin: 0;
+    font-weight: 800;
 }
 
 .cart__items {
     display: flex;
     gap: .5rem;
     flex-direction: column;
-    width: 60%;
-    overflow: scroll;
-    max-height: 300px;
+    width: 100%;
     height: 300px;
+    overflow: scroll;
+
 }
 
+.cart__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart__total h5 {
+    margin: 0;
+    color: #a6a6a6;
+}
 
 .cart__amount {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
 
 }
 
@@ -45,9 +58,10 @@
 
 
 .cart__buttons {
+    margin-top: 1rem;
     display: flex;
     gap: 2rem;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
 }
 
@@ -83,12 +97,7 @@
     transition: .3s;
 }
 
-.underLine {
-    height: 1px;
-    background: rgb(206, 206, 206);
-    width: 100%;
-    margin-top: .5rem;
-}
+
 
 .cart__total h2 {
     text-align: center;

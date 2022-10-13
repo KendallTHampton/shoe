@@ -37,10 +37,12 @@ function Navbar(props)
 
                 <div className={showNav ? `${ classes.nav__list } ${ classes.nav__active }` : `${ classes.nav__list }`} >
 
-                    <h4 className={classes.nav__item}>Shoes</h4>
-                    <h4 className={classes.nav__item}>Contact</h4>
+                    <h4 onClick={onShowNavbar} className={classes.nav__item}>Shoes</h4>
+                    <h4 onClick={onShowNavbar} className={classes.nav__item}>Contact</h4>
 
-                    <div className={`${ classes.cart } ${ classes.nav__item }`} onClick={props.onShowCart}>
+                    <div className={`${ classes.cart } ${ classes.nav__item }`} onClick={props.onShowCart}
+                        onMouseUp={onShowNavbar}
+                    >
                         <h4>Cart</h4>
                         <div className={classes.cart__icon}>
                             <CartIcon />
