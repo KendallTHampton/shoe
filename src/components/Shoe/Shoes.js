@@ -1,13 +1,15 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import classes from "./Shoes.module.css";
 import ShoeCard from "./ShoeCard";
 import {shoeData} from "./ShoeData";
 import CartContext from "../../store/cart-context";
+import {storage} from "../../store/firebaseConfig";
+import {getDownloadURL, ref} from "firebase/storage";
 
 
 function Shoes(props)
 {
-
+    const [shoes, setShoes] = useState([])
     const context = useContext(CartContext)
 
 
@@ -28,9 +30,54 @@ function Shoes(props)
             itemObject
         )
 
-
     }
 
+    useEffect(() =>
+    {
+        const fetchMeals = async () =>
+        {
+            const response = await fetch('https://shoeapp-e4b89-default-rtdb.firebaseio.com/shoes.json')
+
+            if (!response.ok)
+            {
+                throw new Error("Something Went Wrong")
+            }
+
+            const responsedata = await response.json()
+
+
+            const shoes = []
+
+            for (let key in responsedata)
+            {
+                const imageURL = await getDownloadURL(ref(storage, responsedata[key].image))
+                    .then((url) =>
+                    {
+
+                        const image = url
+                        return image
+
+
+                    })
+                    .catch((error) =>
+                    { });
+
+
+                shoes.push({
+
+                    id: key,
+                    name: responsedata[key].name,
+                    price: responsedata[key].price,
+                    desc: responsedata[key].desc,
+                    image: imageURL,
+                    sizes: responsedata[key].sizes
+                })
+            }
+            setShoes(shoes)
+        }
+
+        fetchMeals();
+    }, [])
 
 
     return (
@@ -41,17 +88,17 @@ function Shoes(props)
 
                 <div className={classes.shoe__contents}>
 
-                    {shoeData.map((shoes =>
+                    {shoes.map((shoe =>
                     {
                         return (
                             <ShoeCard
-                                key={shoes.key_id}
-                                id={shoes.id}
-                                image={shoes.img}
-                                name={shoes.name}
-                                desc={shoes.desc}
-                                price={shoes.price}
-                                sizes={shoes.sizes}
+                                key={shoe.id}
+                                id={shoe.id}
+                                image={shoe.image}
+                                name={shoe.name}
+                                desc={shoe.desc}
+                                price={shoe.price}
+                                sizes={shoe.sizes}
                                 onAdd={addShoeToCart}
                             />
                         )

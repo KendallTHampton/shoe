@@ -4,8 +4,6 @@ import classes from "./ShoeCard.module.css"
 
 function ShoeCard(props)
 {
-
-
     const onAddHandler = () =>
     {
         props.onAdd(props)

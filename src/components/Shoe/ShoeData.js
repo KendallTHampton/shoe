@@ -3,7 +3,8 @@ import coolElevens from "../../assets/cool11.jpeg"
 import jackies from "../../assets/jackies.webp"
 import pandas from "../../assets/pandas.jpeg"
 import uncdunks from "../../assets/uncdunks.jpeg"
-import offWhitesDunks from "../../assets/offwhite.jpg"
+import offWhitesDunks from "../../assets/lot40.jpg"
+
 
 
 export const shoeData = [

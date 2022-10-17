@@ -6,6 +6,9 @@ import Shoes from './components/Shoe/Shoes';
 import Cart from './components/Cart/Cart';
 import CartProvider from './store/CartProvider';
 
+
+
+
 function App()
 {
 
